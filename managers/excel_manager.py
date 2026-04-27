@@ -102,6 +102,8 @@ class ExcelManager:
                 if j < start_cell_index:
                     continue
                 key = names[j - start_cell_index]
+                if not key:
+                    continue
                 value = str(cell.value).strip() if cell.value else ''
                 obj[key] = value
             result['data'].append(obj)
